@@ -1,7 +1,7 @@
 CWARNINGS := -Wall -Wextra -fno-strict-aliasing -Wno-error=unused-parameter
 CFLAGS := -pipe -O2 -fPIC -I. $(CWARNINGS)
 CXXFLAGS := $(CFLAGS) -IChaiScript-6.0.0/include
-LDFLAGS := -lhidapi-libusb
+LDFLAGS := -lhidapi
 
 HEADER_FILES := powerslaves.h
 

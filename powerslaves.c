@@ -9,6 +9,8 @@
 static hid_device *powersaves = NULL;
 static uint8_t outbuf[OUTBUF_SIZE];
 
+#define POWERSLAVES_DEBUG
+
 #ifdef POWERSLAVES_DEBUG
 #include <stdio.h>
 
@@ -144,6 +146,7 @@ int powerslaves_receive(uint8_t *buf, uint16_t len) {
 int powerslaves_sendreceive(enum powerslaves_cmdtype type, const uint8_t *cmdbuf, uint16_t response_len, uint8_t *resp) {
     int err;
     if ((err = powerslaves_send(type, cmdbuf, response_len)) < 0) return err;
+    Sleep(50);
     return powerslaves_receive(resp, response_len);
 }
 
